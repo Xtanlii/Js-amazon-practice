@@ -15,10 +15,11 @@ if(!cart) {
 
 function saveToStorage() {
   localStorage.setItem('cart', JSON.stringify(cart));
-}
+} 
 
 export function addtoCart(productId) {
   let matchingItem;
+  const productQuantity = document.querySelector(`.js-product-quantity-${productId}`).value;
   
   cart.forEach((cartItem) => {
     if (productId === cartItem.productId) {
@@ -27,11 +28,11 @@ export function addtoCart(productId) {
   });
 
   if (matchingItem) {
-    matchingItem.quantity += 1;
+    matchingItem.quantity += Number(productQuantity);
   } else {
     cart.push({
     productId: productId,
-    quantity: 1
+    quantity: Number(productQuantity),
   });
   }
 

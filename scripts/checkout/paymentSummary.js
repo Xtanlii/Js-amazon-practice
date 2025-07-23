@@ -35,7 +35,7 @@ const paymentSummaryHTML = `
 
   <div class="payment-summary-row">
     <div>Shipping &amp; handling:</div>
-    <div class="payment-summary-money">
+    <div class="payment-summary-money js-payment-summary-money">
     $${formatCurrency(shippingPriceCents)}
     </div>
   </div>
@@ -56,7 +56,7 @@ const paymentSummaryHTML = `
 
   <div class="payment-summary-row total-row">
     <div>Order total:</div>
-    <div class="payment-summary-money">
+    <div class="payment-summary-money js-payment-total">
     $${formatCurrency(totalCents)}
     </div>
   </div>
